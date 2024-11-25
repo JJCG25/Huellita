@@ -1,0 +1,35 @@
+{% extends 'perritos/base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <div class="row align-items-center">
+      <!-- Imagen del perrito -->
+      <div class="col-md-4">
+        <img src="{{ perrito.foto.url }}" alt="{{ perrito.nombre }}" class="img-fluid rounded shadow">
+      </div>
+  
+      <!-- Información del perrito -->
+      <div class="col-md-8">
+        <h1 class="mb-3">{{ perrito.nombre }}</h1>
+        <p><strong>Edad:</strong> {{ perrito.edad }} años</p>
+        <p><strong>Raza:</strong> {{ perrito.raza }}</p>
+        <p><strong>Descripción:</strong> {{ perrito.descripcion }}</p>
+        <p><strong>Estado:</strong> 
+          {% if perrito.disponible %}
+            <span class="badge bg-success">Disponible para adopción</span>
+          {% else %}
+            <span class="badge bg-danger">Adoptado</span>
+          {% endif %}
+        </p>
+      </div>
+    </div>
+  
+    <!-- Botón -->
+    <div class="text-center mt-4">
+      <a href="/lista_perritos/" class="btn btn-primary">Regresar a la lista</a>
+    </div>
+  </div>
+  
+
+{% endblock %}

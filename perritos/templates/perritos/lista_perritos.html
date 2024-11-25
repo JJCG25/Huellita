@@ -1,0 +1,29 @@
+{% extends 'perritos/base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <h1 class="mb-4">Perritos en Adopción</h1>
+    <div class="row g-4">
+      {% for perrito in perritos %}
+        <div class="col-md-4">
+            <div class="card h-100">
+            <img src="{{ perrito.foto.url }}" class="card-img-top" alt="{{ perrito.nombre }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ perrito.nombre }}</h5>
+                <p class="card-text"><strong>Edad:</strong> {{ perrito.edad }} años</p>
+                <p class="card-text"><strong>Raza:</strong> {{ perrito.raza }}</p>
+            </div>
+            <div class="card-footer text-center">
+                <a href="/lista_perritos/{{ perrito.id }}/" class="btn btn-primary">Ver detalles</a>
+            </div>
+            </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  
+
+{% endblock %}
+
+
