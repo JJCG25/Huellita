@@ -8,7 +8,7 @@
       {% for perrito in perritos %}
         <div class="col-md-4">
             <div class="card h-100">
-            <img src="{{ perrito.foto.url }}" class="card-img-top" alt="{{ perrito.nombre }}">
+            <img src="{{ perrito.foto.url }}" class="img-fluid-rounded-shadow" alt="{{ perrito.nombre }}">
             <div class="card-body">
                 <h5 class="card-title">{{ perrito.nombre }}</h5>
                 <p class="card-text"><strong>Edad:</strong> {{ perrito.edad }} años</p>

@@ -1,0 +1,35 @@
+.img-fluid-rounded-shadow {
+    width: 350px;  
+    height: 350px; /* Altura fija para todas las imágenes */
+    object-fit: cover; /* Asegura que las imágenes llenen el espacio sin deformarse */
+    border-radius: 8px; /* Opcional: bordes redondeados */
+}
+.img-card {
+    width: 350x;  
+    height: 350px; /* Altura fija para todas las imágenes */
+    object-fit: cover; /* Asegura que las imágenes llenen el espacio sin deformarse */
+    border-radius: 8px; /* Opcional: bordes redondeados */
+}
+a.navbar-brand {
+    font-family: 'Pacifico', sans-serif;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    color: antiquewhite;
+    font-weight: 700;
+}
+#navbarNav {
+    font-family: 'Livvic', sans-serif;
+    font-weight:700;
+    font-size: medium;
+}
+a.nav-link{
+    color: antiquewhite;
+}
+.navbar-expand-lg{
+    background-color: rgb(162, 104, 216) !important;
+}
+li.nav-item:hover {
+    color: rgb(100, 39, 158, 0.2);
+}
+a.nav-link:hover {
+    color: rgb(100, 39, 158);
+}
