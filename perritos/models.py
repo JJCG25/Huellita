@@ -43,3 +43,20 @@ class Cuidador(models.Model):
 
     def __str__(self):
         return self.nombre
+
+class Categoria(models.Model):
+    nombre = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.nombre
+    
+class producto(models.Model):
+    nombre = models.CharField(max_length=100)
+    precio = models.PositiveBigIntegerField()
+    descripcion = models.CharField(max_length=500)
+    cantidad_disponible = models.PositiveIntegerField()
+    imagen = models.ImageField(upload_to='productos/')
+    categorias = models.ManyToManyField(Categoria, related_name='productos')
+
+    def __str__(self):
+        return self.nombre
