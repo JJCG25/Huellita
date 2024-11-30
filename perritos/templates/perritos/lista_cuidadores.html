@@ -1,0 +1,26 @@
+{% extends 'perritos/base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <h1 class="mb-4">Cuidadores de Perritos</h1>
+    <div class="row g-4">
+      {% for cuidador in cuidadores %}
+        <div class="col-md-4">
+            <div class="card h-100">
+                <img src="{{ cuidador.foto_perfil.url }}" class="img-fluid-rounded-shadow" alt="{{ cuidador.nombre }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ cuidador.nombre }}</h5>
+                    <p class="card-text"><strong>Ubicación:</strong> {{ cuidador.ubicacion }}</p>
+                    <p class="card-text"><strong>Servicios:</strong> {{ cuidador.servicios|slice:":100" }}...</p>
+                </div>
+                <div class="card-footer text-center">
+                    <a href="/lista_cuidadores/{{ cuidador.id }}/" class="btn btn-primary">Ver detalles</a>
+                </div>
+            </div>
+        </div>
+      {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

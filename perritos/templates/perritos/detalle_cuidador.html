@@ -1,0 +1,30 @@
+{% extends 'perritos/base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <div class="row align-items-center">
+      <!-- Imagen del cuidador -->
+      <div class="col-md-4">
+        <img src="{{ cuidador.foto_perfil.url }}" alt="{{ cuidador.nombre }}" class="img-card">
+      </div>
+  
+      <!-- Información del cuidador -->
+      <div class="col-md-8">
+        <h1 class="mb-3">{{ cuidador.nombre }}</h1>
+        <p><strong>Ubicación:</strong> {{ cuidador.ubicacion }}</p>
+        <p><strong>Teléfono:</strong> {{ cuidador.telefono }}</p>
+        <p><strong>Correo:</strong> {{ cuidador.correo }}</p>
+        <p><strong>Experiencia:</strong> {{ cuidador.experiencia }}</p>
+        <p><strong>Servicios:</strong> {{ cuidador.servicios }}</p>
+        <p><strong>Tarifas:</strong> {{ cuidador.tarifas }}</p>
+      </div>
+    </div>
+  
+    <!-- Botón -->
+    <div class="text-center mt-4">
+      <a href="/lista_cuidadores/" class="btn btn-primary">Regresar a la lista</a>
+    </div>
+</div>
+
+{% endblock %}

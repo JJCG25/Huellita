@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Perrito
 from .models import Veterinaria
+from .models import Cuidador
 from django.shortcuts import get_object_or_404
 
 #vista para perritos
@@ -34,6 +35,16 @@ def detalle_veterinaria(request, id):
 
 def cuidadores(request):
     return render(request,'perritos/cuidadores.html')
+
+# Vista para la lista de cuidadores
+def lista_cuidadores(request):
+    cuidadores = Cuidador.objects.all()
+    return render(request, 'perritos/lista_cuidadores.html', {'cuidadores': cuidadores})
+
+# Vista para mostrar detalles de un cuidador
+def detalle_cuidador(request, cuidador_id):
+    cuidador = get_object_or_404(Cuidador, pk=cuidador_id)
+    return render(request, 'perritos/detalle_cuidador.html', {'cuidador': cuidador})
 
 #vista para donaciones
 
