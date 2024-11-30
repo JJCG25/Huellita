@@ -1,0 +1,38 @@
+{% extends 'perritos/base.html' %}
+
+{% block content %}
+    <div class="container mt-4">
+        <h1 class="text-center">{{ veterinaria.nombre }}</h1>
+
+        <!-- Contenedor para la imagen y la información -->
+        <div class="d-flex align-items-center justify-content-center">
+            <!-- Imagen de la Veterinaria -->
+            <div class="me-4" style="flex: 0 0 300px;">
+                {% if veterinaria.imagen %}
+                    <img src="{{ veterinaria.imagen.url }}" alt="{{ veterinaria.nombre }}" class="img-fluid" style="width: 300px; height: 300px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                {% else %}
+                    <p>No hay imagen disponible para esta veterinaria.</p>
+                {% endif %}
+            </div>
+
+            <!-- Información de la Veterinaria en un cuadro minimalista -->
+            <div class="p-4" style="border-top: 1px solid #ddd; border-right: 1px solid #ddd; border-radius: 8px; max-width: 500px; flex-grow: 1; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                <p><strong>Dirección:</strong> {{ veterinaria.direccion }}</p>
+                <p><strong>Teléfono:</strong> {{ veterinaria.telefono }}</p>
+                <p><strong>Correo:</strong> {{ veterinaria.correo }}</p>
+                <p><strong>Horario de atención:</strong> {{ veterinaria.horario_atencion }}</p>
+                <p><strong>Servicios:</strong> {{ veterinaria.servicios }}</p>
+
+                <h2 class="mt-4">Ubicación en Google Maps</h2>
+                {% if veterinaria.ubicacion_mapa %}
+                    <a href="{{ veterinaria.ubicacion_mapa }}" target="_blank" class="btn btn-primary" style="background-color: rgb(162, 104, 216); color: white;">
+                        Ver en Google Maps
+                    </a>
+                {% else %}
+                    <p>No hay una ubicación disponible para esta veterinaria.</p>
+                {% endif %}
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

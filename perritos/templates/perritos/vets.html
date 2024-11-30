@@ -1,7 +1,55 @@
 {% extends 'perritos/base.html' %}
 
 {% block content %}
+    <div class="container mt-4">
+        <h1 class="text-center">Listado de Veterinarias</h1>
 
+        <div class="row mb-4">
+            <div class="col-md-6 offset-md-3">
+                <form method="get" class="input-group">
+                    <input type="text" name="q" class="form-control" placeholder="Buscar por ciudad" value="{{ request.GET.q }}">
+                    <div class="input-group-append">
+                        <button class="btn" type="submit" style="background-color: rgb(162, 104, 216); color: white; border: none;">
+                            Buscar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
 
-
+        <div class="row">
+            {% for vet in veterinarias %}
+                <div class="col-md-4 mb-3">
+                    <div class="card" style="border: none; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ vet.nombre }}</h5>
+                            <p class="card-text">
+                                <strong>Dirección:</strong> {{ vet.direccion }}<br>
+                                <strong>Teléfono:</strong> {{ vet.telefono }}<br>
+                                <strong>Correo:</strong> {{ vet.correo }}<br>
+                                <strong>Horario de atención:</strong> {{ vet.horario_atencion }}
+                            </p>
+                            <!-- Botón "Ver detalles" con el mismo estilo que el de Google Maps -->
+                            <a href="{% url 'detalle_veterinaria' vet.id %}" class="btn mt-3" style="background-color: rgb(162, 104, 216); color: white; border: none;">
+                                Ver detalles
+                            </a>
+                            
+                            <!-- Enlace bonito al Google Maps -->
+                            {% if vet.ubicacion_mapa %}
+                                <a href="{{ vet.ubicacion_mapa }}" target="_blank" class="btn btn-primary mt-3" style="background-color: rgb(162, 104, 216); color: white;">
+                                    Ver en Google Maps
+                                </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% empty %}
+                <div class="col-12">
+                    <div class="alert alert-warning" role="alert">
+                        No se encontraron veterinarias con esos criterios.
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}

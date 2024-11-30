@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Perrito
+from .models import Veterinaria
 from django.shortcuts import get_object_or_404
 
 #vista para perritos
@@ -19,8 +20,15 @@ def detalle_perrito(request, id):
 
 #vista para veterinarias
 
-def vets(request):
-    return render(request,'perritos/vets.html')
+
+
+def listar_veterinarias(request):
+    veterinarias = Veterinaria.objects.all()  # Consulta todas las veterinarias
+    return render(request, 'perritos/vets.html', {'veterinarias': veterinarias})
+
+def detalle_veterinaria(request, id):
+    veterinaria = get_object_or_404(Veterinaria, id=id)
+    return render(request, 'perritos/detalle_vet.html', {'veterinaria': veterinaria})
 
 #vista para cuidadores
 

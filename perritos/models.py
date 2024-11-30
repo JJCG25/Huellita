@@ -24,6 +24,7 @@ class Veterinaria(models.Model):
     servicios = models.TextField()
     horario_atencion = models.CharField(max_length=100)
     ubicacion_mapa = models.URLField(blank=True)  # URL para integración con Google Maps
+    imagen = models.ImageField(upload_to='fotos_veterinarias/', blank=True, null=True)
 
     def __str__(self):
         return self.nombre
