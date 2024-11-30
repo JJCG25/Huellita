@@ -1,14 +1,18 @@
 .img-fluid-rounded-shadow {
-    width: 350px;  
+    width: 100%;  
     height: 350px; /* Altura fija para todas las imágenes */
     object-fit: cover; /* Asegura que las imágenes llenen el espacio sin deformarse */
     border-radius: 8px; /* Opcional: bordes redondeados */
 }
 .img-card {
-    width: 350x;  
-    height: 350px; /* Altura fija para todas las imágenes */
-    object-fit: cover; /* Asegura que las imágenes llenen el espacio sin deformarse */
-    border-radius: 8px; /* Opcional: bordes redondeados */
+    width: 100%;              /* Asegura que la imagen ocupe todo el ancho de su contenedor */
+    height: 350px;             /* Mantiene la proporción de la imagen */
+    border-radius: 8px;       /* Bordes redondeados para la imagen */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Agrega sombra */
+    object-fit: cover;   /* Opcional: bordes redondeados */
+}
+.h-100{
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.375); /* Agrega sombra */
 }
 a.navbar-brand {
     font-family: 'Pacifico', sans-serif;
