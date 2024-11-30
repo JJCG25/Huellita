@@ -1,0 +1,46 @@
+{% extends 'perritos/base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="mb-4">¡Ayúdanos con tu donación!</h1>
+
+    <p>Tu donación ayudará a cubrir los gastos de comida, atención veterinaria y rescates de perritos necesitados. Con tu apoyo, podemos continuar brindando cuidados a más animales y ayudarlos a encontrar un hogar.</p>
+
+    <p>Opciones de donación:</p>
+
+    <!-- Donación puntual -->
+    <div class="donation-option">
+        <h3>Donación Puntual</h3>
+        <p>Realiza una donación única para apoyar nuestras causas. Cada pequeño aporte cuenta para mejorar la vida de los perritos.</p>
+        
+        <!-- PayPal Button (Puntual) -->
+        <form action="https://www.paypal.com/donate" method="post" target="_top">
+            <input type="hidden" name="business" value="tu-email-de-paypal@example.com">
+            <input type="hidden" name="item_name" value="Donación Puntual para el Proyecto Huellita">
+            <input type="hidden" name="currency_code" value="USD">
+            <input type="submit" value="Donar Puntualmente" class="btn btn-success">
+        </form>
+    </div>
+
+    <!-- Donación mensual -->
+    <div class="donation-option mt-4">
+        <h3>Donación Mensual</h3>
+        <p>Ayúdanos de forma recurrente. Con una donación mensual, podrás garantizar un soporte constante para los perritos en adopción.</p>
+
+        <!-- PayPal Button (Mensual) -->
+        <form action="https://www.paypal.com/donate" method="post" target="_top">
+            <input type="hidden" name="business" value="tu-email-de-paypal@example.com">
+            <input type="hidden" name="item_name" value="Donación Mensual para el Proyecto Huellita">
+            <input type="hidden" name="currency_code" value="USD">
+            <input type="hidden" name="a3" value="10.00">  <!-- Monto mensual, puedes ajustarlo -->
+            <input type="hidden" name="p3" value="1"> <!-- Número de pagos mensuales -->
+            <input type="hidden" name="t3" value="M"> <!-- "M" para mensual -->
+            <input type="submit" value="Donar Mensualmente" class="btn btn-primary">
+        </form>
+    </div>
+
+    <div class="text-center mt-5">
+        <p>¡Gracias por tu generosidad! Cada aportación es un paso más hacia una mejor vida para nuestros perritos.</p>
+    </div>
+</div>
+{% endblock %}

@@ -40,3 +40,53 @@ ul.navbar-nav > li.nav-item:hover {
     border-radius: 5px; 
     transition: background-color 0.3s ease; 
 }
+
+.carousel-item {
+    width: 30%;
+}
+
+/* Ajustes para el carousel */
+#bannerCarousel {
+    max-height: 1000px;  /* Limita la altura total del banner */
+    overflow: hidden;   /* Oculta el contenido fuera del contenedor */
+}
+
+.carousel-inner {
+    height: 100%;       /* Asegura que la imagen ocupe todo el contenedor */
+}
+
+.carousel-item img {
+    width: 100%;        /* La imagen ocupa todo el ancho del contenedor */
+    height: 600px;      /* Altura de las imágenes en el carousel */
+    object-fit: cover;  /* Asegura que la imagen cubra el área sin distorsionarse */
+}
+
+/* Mejorar el aspecto de las imágenes */
+.carousel-caption h2, .carousel-caption p {
+    font-size: 1.5rem;   /* Tamaño del texto para una mejor visibilidad */
+    color: #fff;         /* Color del texto */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);  /* Sombra para el texto */
+}
+
+/* Para dispositivos pequeños, ajustamos la altura */
+@media (max-width: 767px) {
+    .carousel-item img {
+        height: 300px; /* Ajustamos la altura en pantallas pequeñas */
+    }
+}
+
+/* Otras clases de imagen para otros elementos en la página */
+.img-fluid-rounded-shadow {
+    width: 100%;  
+    height: 300px; /* Altura más pequeña para las imágenes en otras secciones */
+    object-fit: cover; /* Asegura que las imágenes llenen el espacio sin deformarse */
+    border-radius: 8px; /* Bordes redondeados opcionales */
+}
+
+.img-card {
+    width: 100%;              /* Asegura que la imagen ocupe todo el ancho de su contenedor */
+    height: 300px;             /* Mantiene la proporción de la imagen */
+    border-radius: 8px;       /* Bordes redondeados para la imagen */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Agrega sombra */
+    object-fit: cover;   /* Opcional: bordes redondeados */
+}

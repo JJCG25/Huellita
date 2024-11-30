@@ -1,9 +1,81 @@
 {% extends 'perritos/base.html' %}
 
 {% block content %}
-<h1>¡Bienvenido a Huellita!</h1>
-<p>Explora y encuentra a tu nuevo mejor amigo.</p>
-<a href="/lista_perritos/">Ver perritos disponibles para adopción</a>
+<!-- Banner principal -->
+<div id="bannerCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <!-- Imagen 1 -->
+    <div class="carousel-item active">
+      <img src="/media/imagenes/wau.png" class="d-block w-100" alt="Perrito feliz">
+      <div class="carousel-caption d-none d-md-block">
+        <h2>¡Encuentra a tu nuevo mejor amigo!</h2>
+        <p>Adopta un perrito y cambia su vida para siempre.</p>
+      </div>
+    </div>
+    <!-- Imagen 2 -->
+    <div class="carousel-item">
+      <img src="/media/imagenes/wau2.png" class="d-block w-100" alt="Perrito en adopción">
+      <div class="carousel-caption d-none d-md-block">
+        <h2>¡Adopta, rescata y ama!</h2>
+        <p>Los perritos te están esperando. ¡Dales una oportunidad!</p>
+      </div>
+    </div>
+    <!-- Imagen 3 -->
+    <div class="carousel-item">
+      <img src="/media/imagenes/wau3.png" class="d-block w-100" alt="Perrito en rescate">
+      <div class="carousel-caption d-none d-md-block">
+        <h2>¡Rescatemos juntos!</h2>
+        <p>Tu apoyo es vital para darles un hogar a los perritos en necesidad.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#bannerCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#bannerCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<!-- Breve descripción del propósito -->
+<div class="container mt-5 text-center">
+  <h2>¿Quiénes somos?</h2>
+  <p>En nuestro sitio nos dedicamos a rescatar perritos de la calle, brindarles atención veterinaria, y ayudarles a encontrar un hogar lleno de amor. Tu apoyo hace todo esto posible.</p>
+</div>
+
+<!-- Sección de testimonios o estadísticas -->
+<div class="container mt-5">
+  <h3 class="text-center mb-4">Impacto en la comunidad</h3>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">Más de 100 perritos rescatados</h5>
+          <p class="card-text">Gracias a tus donaciones y apoyo, más de 100 perritos han encontrado un hogar y una segunda oportunidad.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">Testimonios</h5>
+          <p class="card-text">"Adoptar un perrito fue una de las mejores decisiones de mi vida. ¡Estoy muy agradecido!"</p>
+          <footer class="blockquote-footer">Ana Pérez, adoptante feliz</footer>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">Historias de éxito</h5>
+          <p class="card-text">"Mi perrito tiene una nueva vida gracias a este proyecto. Estoy muy feliz de haberlo adoptado."</p>
+          <footer class="blockquote-footer">Carlos Gómez, adoptante feliz</footer>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 {% endblock %}
-
-

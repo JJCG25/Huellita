@@ -49,4 +49,4 @@ def detalle_cuidador(request, cuidador_id):
 #vista para donaciones
 
 def money(request):
-    return render(request,'perritos/money.html')
+    return render(request,'perritos/donaciones.html')
